@@ -10,7 +10,7 @@ using OpenLicence.Infra.Data.Context;
 namespace OpenLicence.Infra.Data.Migrations
 {
     [DbContext(typeof(OpenLicenceContext))]
-    [Migration("20200812053420_InitialMigrate")]
+    [Migration("20200820012321_InitialMigrate")]
     partial class InitialMigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,16 +29,14 @@ namespace OpenLicence.Infra.Data.Migrations
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(14)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(14)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(128)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(128)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");
@@ -100,8 +98,7 @@ namespace OpenLicence.Infra.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(128)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(128)");
 
                     b.Property<Guid>("SoftwareHouseID")
                         .HasColumnType("uuid");
@@ -126,16 +123,14 @@ namespace OpenLicence.Infra.Data.Migrations
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(14)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(14)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(128)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(128)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");

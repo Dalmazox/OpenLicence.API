@@ -16,12 +16,12 @@ namespace OpenLicence.Infra.Data.Mappings
 
             builder
                 .Property(sh => sh.Name)
-                .HasColumnName("VARCHAR(128)")
+                .HasColumnType("VARCHAR(128)")
                 .IsRequired();
 
             builder
                 .Property(sh => sh.CNPJ)
-                .HasColumnName("VARCHAR(14)")
+                .HasColumnType("VARCHAR(14)")
                 .IsRequired();
         }
     }

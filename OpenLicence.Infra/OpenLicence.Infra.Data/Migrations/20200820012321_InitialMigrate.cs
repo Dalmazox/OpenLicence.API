@@ -12,8 +12,8 @@ namespace OpenLicence.Infra.Data.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(nullable: false),
-                    VARCHAR128 = table.Column<string>(name: "VARCHAR(128)", nullable: false),
-                    VARCHAR14 = table.Column<string>(name: "VARCHAR(14)", nullable: false),
+                    Name = table.Column<string>(type: "VARCHAR(128)", nullable: false),
+                    CNPJ = table.Column<string>(type: "VARCHAR(14)", nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false)
                 },
@@ -27,8 +27,8 @@ namespace OpenLicence.Infra.Data.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(nullable: false),
-                    VARCHAR128 = table.Column<string>(name: "VARCHAR(128)", nullable: false),
-                    VARCHAR14 = table.Column<string>(name: "VARCHAR(14)", nullable: false),
+                    Name = table.Column<string>(type: "VARCHAR(128)", nullable: false),
+                    CNPJ = table.Column<string>(type: "VARCHAR(14)", nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false)
                 },
@@ -42,7 +42,7 @@ namespace OpenLicence.Infra.Data.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(nullable: false),
-                    VARCHAR128 = table.Column<string>(name: "VARCHAR(128)", nullable: false),
+                    Name = table.Column<string>(type: "VARCHAR(128)", nullable: false),
                     SoftwareHouseID = table.Column<Guid>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false)
                 },
@@ -85,9 +85,9 @@ namespace OpenLicence.Infra.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Enterprises_VARCHAR(14)",
+                name: "IX_Enterprises_CNPJ",
                 table: "Enterprises",
-                column: "VARCHAR(14)",
+                column: "CNPJ",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -96,9 +96,9 @@ namespace OpenLicence.Infra.Data.Migrations
                 column: "CreatedAt");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Enterprises_VARCHAR(128)",
+                name: "IX_Enterprises_Name",
                 table: "Enterprises",
-                column: "VARCHAR(128)");
+                column: "Name");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enterprises_UpdatedAt",
@@ -127,9 +127,9 @@ namespace OpenLicence.Infra.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_SoftwareHouses_VARCHAR(14)",
+                name: "IX_SoftwareHouses_CNPJ",
                 table: "SoftwareHouses",
-                column: "VARCHAR(14)",
+                column: "CNPJ",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -138,9 +138,9 @@ namespace OpenLicence.Infra.Data.Migrations
                 column: "CreatedAt");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SoftwareHouses_VARCHAR(128)",
+                name: "IX_SoftwareHouses_Name",
                 table: "SoftwareHouses",
-                column: "VARCHAR(128)");
+                column: "Name");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Softwares_CreatedAt",
@@ -153,9 +153,9 @@ namespace OpenLicence.Infra.Data.Migrations
                 column: "SoftwareHouseID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Softwares_VARCHAR(128)_SoftwareHouseID",
+                name: "IX_Softwares_Name_SoftwareHouseID",
                 table: "Softwares",
-                columns: new[] { "VARCHAR(128)", "SoftwareHouseID" },
+                columns: new[] { "Name", "SoftwareHouseID" },
                 unique: true);
         }
 

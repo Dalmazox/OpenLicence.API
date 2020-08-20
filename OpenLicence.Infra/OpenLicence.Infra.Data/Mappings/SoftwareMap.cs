@@ -18,7 +18,7 @@ namespace OpenLicence.Infra.Data.Mappings
 
             builder
                 .Property(s => s.Name)
-                .HasColumnName("VARCHAR(128)")
+                .HasColumnType("VARCHAR(128)")
                 .IsRequired();
         }
     }

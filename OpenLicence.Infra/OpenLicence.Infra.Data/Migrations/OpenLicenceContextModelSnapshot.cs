@@ -27,16 +27,14 @@ namespace OpenLicence.Infra.Data.Migrations
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(14)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(14)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(128)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(128)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");
@@ -98,8 +96,7 @@ namespace OpenLicence.Infra.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(128)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(128)");
 
                     b.Property<Guid>("SoftwareHouseID")
                         .HasColumnType("uuid");
@@ -124,16 +121,14 @@ namespace OpenLicence.Infra.Data.Migrations
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(14)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(14)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("VARCHAR(128)")
-                        .HasColumnType("text");
+                        .HasColumnType("VARCHAR(128)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");

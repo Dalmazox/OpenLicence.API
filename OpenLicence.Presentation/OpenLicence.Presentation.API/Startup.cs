@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using OpenLicence.Infra.IoC;
 
-namespace OpenLicence.Application.API
+namespace OpenLicence.Presentation.API
 {
     public class Startup
     {
@@ -27,7 +20,10 @@ namespace OpenLicence.Application.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddContext(Configuration);
+
+            services
+                .AddContext(Configuration)
+                .ConfigureServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

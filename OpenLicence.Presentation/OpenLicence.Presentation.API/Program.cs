@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace OpenLicence.Application.API
+namespace OpenLicence.Presentation.API
 {
     public class Program
     {
