@@ -8,8 +8,9 @@ namespace OpenLicence.Application.Services
     public class SoftwareService : BaseService<Software, ISoftwareRepository>, ISoftwareService
     {
         public SoftwareService(IUnitOfWork uow) : base(uow)
-        {
+        { }
 
-        }
+        public override void Normalize(Software entity)
+        { }
     }
 }

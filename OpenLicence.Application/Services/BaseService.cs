@@ -40,5 +40,7 @@ namespace OpenLicence.Application.Services
 
         public virtual void Delete(TEntity entity)
             => _repository.Delete(entity);
+
+        public abstract void Normalize(TEntity entity);
     }
 }

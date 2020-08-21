@@ -8,8 +8,9 @@ namespace OpenLicence.Application.Services
     public class EnterpriseService : BaseService<Enterprise, IEnterpriseRepository>, IEnterpriseService
     {
         public EnterpriseService(IUnitOfWork uow) : base(uow)
-        {
+        { }
 
-        }
+        public override void Normalize(Enterprise entity)
+        { }
     }
 }

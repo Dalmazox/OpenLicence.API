@@ -4,6 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OpenLicence.Infra.IoC;
+using FluentValidation.AspNetCore;
+using OpenLicence.Presentation.API.Validators;
+using AutoMapper;
+using OpenLicence.Presentation.API.ViewModels.Profiles;
 
 namespace OpenLicence.Presentation.API
 {
@@ -19,10 +23,16 @@ namespace OpenLicence.Presentation.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddFluentValidation(fv =>
+                    {
+                        fv.RegisterValidatorsFromAssemblyContaining<SoftwareHouseValidator>().AutomaticValidationEnabled = false;
+                    });
 
             services
                 .AddContext(Configuration)
+                .AddAutoMapper(new[] { typeof(SoftwareHouseProfile).Assembly })
                 .ConfigureServices();
         }
 

@@ -16,16 +16,20 @@ namespace OpenLicence.Application.Helpers
         }
 
         public IActionResult Error(int statusCode = StatusCodes.Status400BadRequest, string message = null, object data = null)
-            => new ObjectResult(Build(statusCode, message ?? "Request with error", data));
+            => Build(statusCode, message ?? "Request with error", data);
 
         public IActionResult Success(int statusCode = StatusCodes.Status200OK, string message = null, object data = null)
-            => new ObjectResult(Build(statusCode, message ?? "Request success", data));
+            => Build(statusCode, message ?? "Request success", data);
 
-        private Response Build(int statusCode, string message, object data)
-            => _builder
+        public IActionResult ValidationError(object data, int statusCode = StatusCodes.Status400BadRequest)
+            => Build(statusCode, "Some validation errors ocurred", data);
+
+        private IActionResult Build(int statusCode, string message, object data)
+            => new ObjectResult(_builder
                     .WithStatusCode(statusCode)
                     .WithMessage(message)
                     .WithData(data)
-                    .Build();
+                    .Build())
+            { StatusCode = statusCode };
     }
 }
